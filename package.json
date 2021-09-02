@@ -1,0 +1,25 @@
+{
+  "name": "ghosthelper-web",
+  "version": "1.0.0",
+  "description": "A web application for ghost hunting games.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DudiVok/ghosthelper-web.git"
+  },
+  "author": "DudiVok",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DudiVok/ghosthelper-web/issues"
+  },
+  "homepage": "https://github.com/DudiVok/ghosthelper-web#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^4.1.1",
+    "mongoose": "^6.0.4",
+    "react": "^17.0.2"
+  }
+}
