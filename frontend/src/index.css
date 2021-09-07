@@ -1,0 +1,25 @@
+  
+main {
+  min-height: 80vh;
+  background-color: #495057;
+  padding-top: 4em;
+  font-family: 'Ubuntu', sans-serif;
+  color: #ced4da;
+}
+
+h3 {
+  padding: 1rem 0;
+}
+
+.rating span {
+  margin: 0.1rem;
+}
+
+.navbar-brand{
+  color: #ffc107;
+  text-align: center;
+  margin: auto;
+  font-size: 1.3em;
+  padding-right: 5px;
+  font-family: 'Permanent Marker', cursive;
+}
