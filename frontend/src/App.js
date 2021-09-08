@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <main className='py-3'>
+      <main>
         <div className="container-fluid">
           <Route exact path='/phasmo' component={PhasmoScreen} />
         </div>

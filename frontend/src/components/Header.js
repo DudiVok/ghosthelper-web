@@ -5,8 +5,8 @@ import { Container, Navbar, Nav } from 'react-bootstrap';
 const Header = () => {
   return (
     <header>
-      <Navbar bg='dark' variant='dark' expand='lg' fixed='top' collapseOnSelect>
-        <Container>
+      <Navbar variant='dark' expand='lg' className='py-3 py-lg-1' sticky='top' collapseOnSelect>
+        <Container fluid className="navbarContainer">
           <LinkContainer to='/'>
             <Navbar.Brand>Ghost Helper</Navbar.Brand>
           </LinkContainer>

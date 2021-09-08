@@ -1,10 +1,9 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import Ghost from 'components/Phasmo';
 
 const Evidence = ({ evidence, clue = null, click }) => {
   return (
-    <Card className='my-3 p-3 rounded'>
+    <Card className='my-3 p-3 rounded customCard'>
       <Card.Body>
           <Card.Title as='h4'>
             <strong>{evidence.evidenceNameFull}</strong>

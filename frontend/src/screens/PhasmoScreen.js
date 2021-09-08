@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Ghost from "components/Phasmo";
-import BootstrapTable from "react-bootstrap-table-next";
 import axios from "axios";
 import Evidence from "components/Evidence";
 import { Row, Col } from "react-bootstrap";
@@ -17,12 +15,7 @@ const HomeScreen = () => {
 
     const fetchEvidences = async () => {
       const { data } = await axios.get(`/api/phasmoEvidences`);
-      setEvidences(
-        data.map((d) => {
-          d.clue = null;
-          return d;
-        })
-      );
+      setEvidences(data);
     };
 
     fetchGhosts();
@@ -33,8 +26,8 @@ const HomeScreen = () => {
     "ghostDots",
     "ghostEmf",
     "ghostFinger",
-    "ghostFreezing",
     "ghostOrb",
+    "ghostFreezing",
     "ghostWriting",
     "ghostBox",
   ];
@@ -43,6 +36,13 @@ const HomeScreen = () => {
   let initGroups = {};
   let id = 0;
 
+
+  const filterBy2 = [];
+  evidences.forEach((item) => {
+    filterBy2.push(item.evidenceName.toString());
+  });
+
+
   const unique = (prop) => {
     const res = [];
     ghosts.forEach((v) => {
@@ -50,15 +50,23 @@ const HomeScreen = () => {
     });
     return res;
   };
-
+  
   filterBy.forEach((item) => {
     init[item] = [];
     initGroups[item] = unique(item);
   });
 
-  const [filterGroups, setFilterGroups] = useState(initGroups);
+  console.log(init);
+  console.log(initGroups);
 
+  //  Valamim itt baszódik el, mert az init és initGroups fasza mind a 2 módon
+  //  viszont a filters és filterGroups beszarik ha a lekérdezett sablont használom
+
+  const [filterGroups, setFilterGroups] = useState(initGroups);
   const [filters, setFilters] = useState(init);
+
+  console.log(filters);
+  console.log(filterGroups);
 
   const filterData = () => {
     let result = ghosts;
@@ -86,6 +94,9 @@ const HomeScreen = () => {
       });
     }
 
+    const checkbox = document.querySelector('input[type=checkbox][filter='+filter+'][name='+(name==="true" ? "false":"true")+']');
+    checkbox.hidden = checked;
+
     const tmp = filterGroups[filter];
     let updateGroup = [...tmp];
     setFilterGroups({
@@ -101,6 +112,7 @@ const HomeScreen = () => {
     var x = document.getElementsByClassName("checkbox");
     for (let i = 0; i <= x.length - 1; i++) {
       x[i].checked = false;
+      x[i].hidden = false;
     }
   };
 
@@ -110,7 +122,7 @@ const HomeScreen = () => {
         src="https://kit.fontawesome.com/26aa496276.js"
         crossorigin="anonymous"
       ></script>
-      <div style={{ marginTop: 100 }}>
+      <div className="main">
         <button className="col-12 btn btn-dark" onClick={clearAll}>
           Clear
         </button>

@@ -1,25 +1,42 @@
-  
-main {
+main{
+  background-color: #2b2f35;
+}
+
+.main {
+  padding-top: 20px;
   min-height: 80vh;
-  background-color: #495057;
-  padding-top: 4em;
+  background-color: #2b2f35;
   font-family: 'Ubuntu', sans-serif;
   color: #ced4da;
 }
 
-h3 {
-  padding: 1rem 0;
+.btn-dark{
+  background-color: #18191A;
 }
 
-.rating span {
-  margin: 0.1rem;
-}
-
-.navbar-brand{
+.navbar-dark .navbar-brand {
   color: #ffc107;
-  text-align: center;
+  text-align: left;
   margin: auto;
-  font-size: 1.3em;
-  padding-right: 5px;
+  font-size: 1.4em;
   font-family: 'Permanent Marker', cursive;
+}
+
+.navbar-dark {
+  background-color: #18191A;
+  -webkit-box-shadow: 0 8px 6px 6px #ffc107;
+    -moz-box-shadow: 0 8px 6px 6px #ffc107;
+    box-shadow: 0 8px 6px -5px #ffc107;
+}
+
+.navbarContainer{
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.customCard{
+  background-color: #18191A;
+  -webkit-box-shadow: 0 8px 6px 6px #ffc107;
+  -moz-box-shadow: 0 8px 6px 6px #ffc107;
+  box-shadow: 0 8px 6px -5px #ffc107;
 }
