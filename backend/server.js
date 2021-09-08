@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import colors from 'colors';
 import connectDB from './config/db.js';
 import ghostRoutes from './routes/ghostRoutes.js';
+import evidenceRoutes from './routes/evidenceRoutes.js';
 
 // Loading environmental variables
 dotenv.config();
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/phasmo', ghostRoutes);
+app.use('/api/phasmoEvidences', evidenceRoutes);
 
 const PORT = process.env.PORT || 5000;
 
